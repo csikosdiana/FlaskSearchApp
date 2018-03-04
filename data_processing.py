@@ -3,7 +3,7 @@ import json
 from operator import itemgetter
 
 
-json_data = open('exercise-data June 2017.json')
+json_data = open('exercise-data June 2017.json', encoding='utf-8')
 contacts = json.load(json_data)
 
 
