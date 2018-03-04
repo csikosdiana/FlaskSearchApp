@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block content %}
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<button type="reset" name="reset" value="Reset" onclick="window.location='/'">Reset</button>
+<h3>You are searching contact by "{{ selected }}"" with "{{ search_term }}"<h3>
+<h3>Results:<h3>
+    {% if final_results%}
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Email</th> 
+                <th>Country</th>
+                <th>City</th>
+                <th>Company</th>
+                <th>Job history</th>
+            </tr>
+            {% for result in final_results %}
+                <tr>
+                    <td>{{ result["name"] }}</td>
+                    <td>{{ result["email"] }}</td>
+                    <td>{{ result["country"] }}</td>
+                    <td>{{ result["city"]}}</td>
+                    <td>{{ result["company"]}}</td>
+                    <td>{{ display_job_history(result["job_history"]) }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h4>No result found<h4>
+    {% endif %}
+{% endblock %}
