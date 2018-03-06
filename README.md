@@ -11,3 +11,6 @@
 - Type a search term into the input box
 - Push the `Search` button
 If you want a new search push `Reset` or just simply give new search parameters without `Reset`.
+
+## How to run tests
+- In terminal run `pytest tests`

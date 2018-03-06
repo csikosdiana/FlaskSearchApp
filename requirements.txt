@@ -1,2 +1,4 @@
 Flask==0.12.2
 WTForms==2.1
+pytest==3.4.2
+mock==2.0.0
